@@ -10,16 +10,52 @@
 // Reminder: The test will call your function
 // Run the file with the following command: $ yarn jest
 
+// Jest template
+// describe("", () => {
+//   it("", () => {
+//     expect().toEqual()
+//   })
+// })
+
 // --------------------INSTRUCTOR EXAMPLE: Create a function that takes in an array of numbers and returns an array with all the numbers multiplied by 3.
 
 // a) Create a test with expect statements for each of the variables provided.
 
-const numbersArray1 = [6, 7, 8, 9, 10]
-// Expected output: [18, 21, 24, 27, 30]
-const numbersArray2 = [24, 27, 30, 33, 36]
-// Expected output: [72, 81, 90, 99, 108]
+describe("multiplyByThree", () => {
+  it("takes in an array of numbers and returns an array with all the numbers multiplied by 3.", () => {
+    const numbersArray1 = [6, 7, 8, 9, 10]
+    // Expected output: [18, 21, 24, 27, 30]
+    const numbersArray2 = [24, 27, 30, 33, 36]
+    // Expected output: [72, 81, 90, 99, 108]
+    expect(multiplyByThree(numbersArray1)).toEqual([18, 21, 24, 27, 30])
+    expect(multiplyByThree(numbersArray2)).toEqual([72, 81, 90, 99, 108])
+  })
+})
+
+// ReferenceError: multiplyByThree is not defined
 
 // b) Create the function that makes the test pass.
+// Psuedocode:
+// Declare a function called multiplyByThree that takes in an array
+  // One parameter - array
+  // Iterate over array using map
+  // Multiply currentValue by 3
+// Return result
+
+// const multiplyByThree = (array) => {
+//   return array1.map(value => value * 3)
+// }
+
+// ReferenceError: array1 is not defined
+// I have searched for these things...and here is what I have found and my process to solve.
+
+const multiplyByThree = (array) => {
+  return array.map(value => value * 3)
+}
+
+// Test Suites: 1 passed, 1 total
+// Looks like I had an extra one on my array...OOPS!!
+
 
 // --------------------1) Create a function that takes a object as an argument and decides if the number inside it is evenly divisible by three or not.
 
